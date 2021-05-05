@@ -1,0 +1,10 @@
+Package: mR
+Type: Package
+Title: Demo R package for the mastering R class.
+Version: 0.1.0
+Author: Attila <szuts_attila@student.ceu.edu>
+Maintainer: Attila <szuts_attila@student.ceu.edu>
+Description: Demo R package for the mastering R class.
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
