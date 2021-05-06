@@ -3,6 +3,7 @@
 export(convert_currency)
 export(forint)
 importFrom(checkmate,assert_number)
+importFrom(glue,glue)
 importFrom(jsonlite,fromJSON)
 importFrom(logger,log_error)
 importFrom(logger,log_info)

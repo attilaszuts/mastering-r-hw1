@@ -7,6 +7,7 @@
 #' @importFrom jsonlite fromJSON
 #' @importFrom checkmate assert_number
 #' @importFrom logger log_info log_error
+#' @importFrom glue glue
 #' @examples
 #' convert_currency(from = "EUR", to = "HUF")
 convert_currency <- function(from = "USD", to = "HUF", retried = 0) {
