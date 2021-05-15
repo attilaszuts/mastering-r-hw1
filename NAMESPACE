@@ -2,6 +2,7 @@
 
 export(convert_currency)
 export(forint)
+export(get_exchange_rates)
 export(get_usdhufs)
 importFrom(checkmate,assertNumeric)
 importFrom(checkmate,assert_number)
