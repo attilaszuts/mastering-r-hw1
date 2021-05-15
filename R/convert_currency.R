@@ -34,7 +34,7 @@ convert_currency <- function(from = "USD", to = "HUF", retried = 0) {
 #' @return \code{data.table} object
 #' @export
 #' @importFrom logger log_error log_info
-#' @importFrom checkmate assert_numeric
+#' @importFrom checkmate assertNumeric
 #' @importFrom data.table data.table
 #' @importFrom httr GET content
 get_usdhufs <- function(start_date = Sys.Date() - 30, end_date = Sys.Date(), retried = 0){
