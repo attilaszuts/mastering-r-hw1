@@ -7,7 +7,7 @@
 forint(x)
 }
 \arguments{
-\item{x}{A number}
+\item{x}{A numeric vector}
 }
 \value{
 string

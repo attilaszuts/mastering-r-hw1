@@ -2,8 +2,13 @@
 
 export(convert_currency)
 export(forint)
+export(get_usdhufs)
 importFrom(checkmate,assert_number)
+importFrom(checkmate,assert_numeric)
+importFrom(data.table,data.table)
 importFrom(glue,glue)
+importFrom(httr,GET)
+importFrom(httr,content)
 importFrom(jsonlite,fromJSON)
 importFrom(logger,log_error)
 importFrom(logger,log_info)
