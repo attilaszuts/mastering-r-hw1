@@ -13,6 +13,10 @@ get_exchange_rates(
 )
 }
 \arguments{
+\item{symbol}{Currency to convert to}
+
+\item{base}{Currency to convert from}
+
 \item{start_date}{date}
 
 \item{end_date}{date}

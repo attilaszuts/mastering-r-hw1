@@ -58,17 +58,18 @@ get_usdhufs <- function(start_date = Sys.Date() - 30, end_date = Sys.Date(), ret
       } else {
         log_error("Error in request to api. Status code: {response$status_code}")
         Sys.sleep(2 ^ retried)
-        convert_currency(start_date = start_date, end_date = end_date, from, to, retried = retried + 1)
+        get_usdhufs(start_date = start_date, end_date = end_date, retried = retried + 1)
       }
     },
     error = function(e) {
       log_error(e$message)
       Sys.sleep(2 ^ retried)
       # match.call -> repeats a call
-      # instead of repeating: convert_currency(start_date = start_date, end_date = end_date, from, to, retried = retried)
-      mc <- match.call()
-      mc$retried <- mc$retried + 1
-      eval(mc)
+      # instead of repeating:
+      get_usdhufs(start_date = start_date, end_date = end_date, retried = retried + 1)
+      # mc <- match.call()
+      # mc$retried <- mc$retried + 1
+      # eval(mc)
     }
   )
   return(usdhufs)
@@ -76,8 +77,8 @@ get_usdhufs <- function(start_date = Sys.Date() - 30, end_date = Sys.Date(), ret
 
 
 #' Look up the historical value of a symbol in a specified base currency in a given time period.
-#' @param symbol
-#' @param base
+#' @param symbol Currency to convert to
+#' @param base Currency to convert from
 #' @param start_date date
 #' @param end_date date
 #' @inheritParams convert_currency
@@ -101,14 +102,14 @@ get_exchange_rates <- function(symbol = 'HUF', base = 'USD', start_date = Sys.Da
       )
       if (response$status_code == 200) {
         exchange_rates <- content(response)$rates
-        usdhufs <- data.table(
+        xchange_rates <- data.table(
           date = as.Date(gsub(pattern = ".HUF", "", names(unlist(exchange_rates)))),
-          usdhuf = unname(unlist(exchange_rates)))
-        assertNumeric(usdhufs$usdhuf, lower = 250, upper = 400)
+          rates = unname(unlist(exchange_rates)))
+        assertNumeric(xchange_rates$rates)
       } else {
         log_error("Error in request to api. Status code: {response$status_code}")
         Sys.sleep(2 ^ retried)
-        convert_currency(start_date = start_date, end_date = end_date, from, to, retried = retried + 1)
+        get_exchange_rates(symbol = symbol, base = base, start_date = start_date, end_date = end_date, retried = retried + 1)
       }
     },
     error = function(e) {
@@ -121,5 +122,5 @@ get_exchange_rates <- function(symbol = 'HUF', base = 'USD', start_date = Sys.Da
       eval(mc)
     }
   )
-  return(usdhufs)
+  return(xchange_rates)
 }
