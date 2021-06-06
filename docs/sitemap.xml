@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://mastering-r-homework.r-lib.org/index.html</loc>
+  </url>
+  <url>
+    <loc>https://mastering-r-homework.r-lib.org/reference/convert_currency.html</loc>
+  </url>
+  <url>
+    <loc>https://mastering-r-homework.r-lib.org/reference/forint.html</loc>
+  </url>
+  <url>
+    <loc>https://mastering-r-homework.r-lib.org/reference/get_exchange_rates.html</loc>
+  </url>
+  <url>
+    <loc>https://mastering-r-homework.r-lib.org/reference/get_usdhufs.html</loc>
+  </url>
+</urlset>
