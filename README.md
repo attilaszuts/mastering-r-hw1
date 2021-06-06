@@ -3,3 +3,5 @@
   <!-- badges: end -->
   
 # Mastering R homework
+
+This is the website for the mastering R homework package rendered by pkgdown.
