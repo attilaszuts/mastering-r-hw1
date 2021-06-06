@@ -7,4 +7,4 @@ branches:
   - unittest
 
 after_success:
-- Rscript -e 'library(devtools);install();test()'
+- Rscript -e 'library(devtools);install();test();check()'
