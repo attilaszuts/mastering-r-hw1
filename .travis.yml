@@ -1,19 +1,4 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 
-language: r
-warnings_are_errors: true
-branches:
-  only:
-  - unittest
-
-r_build_args: --no-build-vignettes --no-manual
-r_check_args: --no-build-vignettes --no-manual --timings
-
-notifications:
-  email:
-    on_success: always
-    on_failure: always
-
-
-after_success:
-- Rscript -e 'library(devtools);install();test();check()'
+language: R
+cache: packages
