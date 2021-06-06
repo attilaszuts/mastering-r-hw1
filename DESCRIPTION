@@ -1,6 +1,6 @@
 Package: mR
 Type: Package
-Title: Demo R package for the mastering R class.
+Title: Demo R package for the mastering R class
 Version: 0.1.0
 Author: Attila <szuts_attila@student.ceu.edu>
 Maintainer: Attila <szuts_attila@student.ceu.edu>
@@ -9,8 +9,7 @@ License: GPL-2
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.0.2
-Imports: checkmate, scales, checkmate, logger, httr, data.table
-Remotes: hadley/testthat
+Imports: checkmate, scales, logger, httr, data.table, glue, jsonlite
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
